@@ -8,15 +8,15 @@
       <div v-else>
         <div class="card-body">
           <img class="image" src="../assets/tools.jpg" />
-          <h1>ID: {{ product.ID }}</h1>
+          <h1>ID: {{ product && product.ID }}</h1>
           <br />
-          <h2 class="marginn">{{ product.item }}</h2>
-          <p>Quantity: {{ product.quantity.toLocaleString() }}</p>
-          <div class="lister">
+          <h2>{{ product && product.item }}</h2>
+          <p v-if="product">Quantity: {{ product.quantity.toLocaleString() }}</p>
+          <div class="lister" v-if="product">
             <p>Quantity:</p>
             <p class="rev">{{ product.quantity.toLocaleString() }}</p>
           </div>
-          <div class="lister">
+          <div class="lister" v-if="product">
             <p>Price (RM):</p>
             <p class="rev">
               {{
@@ -27,7 +27,7 @@
               }}
             </p>
           </div>
-          <div class="lister">
+          <div class="lister" v-if="product">
             <p>Total (RM):</p>
             <p class="rev">
               {{
@@ -37,13 +37,14 @@
                 })
               }}
             </p>
+          </div>
           <br />
-          <h3>Supplier</h3>
-          <p>{{ product.supplier.name }}</p>
-          <p>{{ product.supplier.address }}</p>
-          <p>{{ product.supplier.tel }}</p>
+          <h3 v-if="product">Supplier</h3>
+          <p v-if="product">{{ product.supplier.name }}</p>
+          <p v-if="product">{{ product.supplier.address }}</p>
+          <p v-if="product">{{ product.supplier.tel }}</p>
           <br />
-          <div>
+          <div v-if="product">
             <router-link
               :to="{ path: '/inventory/' + product.ID + '/edit' }"
               class="btn btn-primary"
