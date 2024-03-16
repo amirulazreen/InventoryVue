@@ -12,22 +12,31 @@
           <br />
           <h2 class="marginn">{{ product.item }}</h2>
           <p>Quantity: {{ product.quantity.toLocaleString() }}</p>
-          <p>Price: RM 
+          <div class="lister">
+            <p>Quantity:</p>
+            <p class="rev">{{ product.quantity.toLocaleString() }}</p>
+          </div>
+          <div class="lister">
+            <p>Price (RM):</p>
+            <p class="rev">
               {{
                 product.price.toLocaleString(undefined, {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                 })
               }}
-          </p>
-          <p>Total: RM 
+            </p>
+          </div>
+          <div class="lister">
+            <p>Total (RM):</p>
+            <p class="rev">
               {{
                 (product.quantity * product.price).toLocaleString(undefined, {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                 })
               }}
-          </p>
+            </p>
           <br />
           <h3>Supplier</h3>
           <p>{{ product.supplier.name }}</p>
