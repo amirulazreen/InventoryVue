@@ -24,7 +24,7 @@
             <th class="idd" @click="handleSort('ID')">ID</th>
             <th @click="handleSort('item')">Item</th>
             <th class="numb" @click="handleSort('quantity')">Quantity</th>
-            <th class="numb" @click="handleSort('price')">Price (RM)</th>
+            <th class="numb" @click="handleSort('price')">Price/Product (RM)</th>
           </tr>
         </thead>
         <tbody>
