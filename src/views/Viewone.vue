@@ -19,7 +19,7 @@
                 })
               }}
           </p>
-          <p>Quantity: {{ product.quantity }}</p>
+          <p>Quantity: {{ product.quantity.toLocaleString() }}</p>
           <p>Total: RM 
               {{
                 (product.quantity * product.price).toLocaleString(undefined, {
