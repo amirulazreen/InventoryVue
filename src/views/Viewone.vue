@@ -11,9 +11,9 @@
           <h1>ID: {{ product.ID }}</h1>
           <br />
           <h2 class="marginn">{{ product.item }}</h2>
-          <p>Price: RM {{ product.price }}</p>
+          <p>Price: RM {{ product.price.toLocaleString() }}</p>
           <p>Quantity: {{ product.quantity }}</p>
-          <p>Total: RM {{ product.quantity * product.price }}</p>
+          <p>Total: RM {{ (product.quantity * product.price).toLocaleString() }}</p>
           <br />
           <h3>Supplier</h3>
           <p>{{ product.supplier.name }}</p>
