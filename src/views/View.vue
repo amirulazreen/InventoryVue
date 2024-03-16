@@ -138,7 +138,7 @@ export default {
       if (confirm("Populate?")) {
         this.loading = true; 
         axios
-          .post("http://localhost:8080/add-many")
+          .post("https://inventorybackend-4mye.onrender.com/add-many")
           .then((response) => {
             console.log(response.data);
             this.getInventory();
