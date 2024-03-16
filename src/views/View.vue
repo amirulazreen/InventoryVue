@@ -72,7 +72,7 @@ export default {
       search: "",
       selectedOption: "Item",
       inventory: [],
-      pageSize: 15,
+      pageSize: 10,
       currentPage: 1,
       sortBy: "",
       sortDirection: "asc",
