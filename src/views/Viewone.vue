@@ -56,7 +56,7 @@ export default {
   methods: {
     fetchProduct() {
       const id = this.$route.params.id;
-      fetch(`http://localhost:8080/inventory/${id}`)
+      fetch(`https://inventorybackend-4mye.onrender.com//inventory/${id}`)
         .then((response) => response.json())
         .then((data) => {
           this.product = data;
@@ -70,7 +70,7 @@ export default {
     deleteInventory(itemid) {
       if (confirm("Delete?")) {
         axios
-          .delete(`http://localhost:8080/delete-inventory/${itemid}`)
+          .delete(`https://inventorybackend-4mye.onrender.com//delete-inventory/${itemid}`)
           .then(() => {
             this.fetchProduct();
             this.$router.push({ path: "/inventory" });
