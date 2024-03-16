@@ -132,7 +132,7 @@ export default {
           })
           .catch((error) => {
             console.error("Error adding items:", error);
-            alert("Failed to add items");
+            alert(error);
           });
       }
     },
