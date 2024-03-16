@@ -1,0 +1,85 @@
+<template>
+  <div class="container mt-5">
+    <div class="card">
+      <div class="card-header">
+        <h4>Item detail</h4>
+      </div>
+      <div v-if="loading">Loading...</div>
+      <div v-else>
+        <div class="card-body">
+          <h1>ID: {{ product.ID }}</h1>
+          <br />
+          <h2 class="marginn">{{ product.item }}</h2>
+          <p>Price: RM {{ product.price }}</p>
+          <p>Quantity: {{ product.quantity }}</p>
+          <p>Total: RM {{ product.quantity * product.price }}</p>
+          <br />
+          <h3>Supplier</h3>
+          <p>{{ product.supplier.name }}</p>
+          <p>{{ product.supplier.address }}</p>
+          <p>{{ product.supplier.tel }}</p>
+          <br />
+          <div>
+            <router-link
+              :to="{ path: '/inventory/' + product.ID + '/edit' }"
+              class="btn btn-primary"
+            >
+              Edit
+            </router-link>
+            <button
+              type="button"
+              @click="deleteInventory(product.ID)"
+              class="btn btn-danger"
+            >
+              Delete
+            </button>
+            <router-link to="/inventory" class="btn btn-info">Back</router-link>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import axios from "axios";
+export default {
+  data() {
+    return {
+      product: null,
+      loading: true,
+    };
+  },
+  mounted() {
+    this.fetchProduct();
+  },
+  methods: {
+    fetchProduct() {
+      const id = this.$route.params.id;
+      fetch(`http://localhost:8080/inventory/${id}`)
+        .then((response) => response.json())
+        .then((data) => {
+          this.product = data;
+          this.loading = false;
+        })
+        .catch((error) => {
+          console.error("Error fetching product:", error);
+          this.loading = false;
+        });
+    },
+    deleteInventory(itemid) {
+      if (confirm("Delete?")) {
+        axios
+          .delete(`http://localhost:8080/delete-inventory/${itemid}`)
+          .then(() => {
+            this.fetchProduct();
+            this.$router.push({ path: "/inventory" });
+          });
+      }
+    },
+    goToEdit(itemid) {
+      this.$router.push({ path: `/inventory/${itemid}` });
+    },
+  },
+};
+</script>
