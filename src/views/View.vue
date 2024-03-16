@@ -84,7 +84,7 @@ export default {
   methods: {
     getInventory() {
       axios
-        .get("http://localhost:8080/inventory")
+        .get("https://inventorybackend-4mye.onrender.com/inventory")
         .then((response) => {
           this.inventory = response.data;
         })
@@ -124,7 +124,7 @@ export default {
     addManyItems() {
       if (confirm("Populate?")) {
         axios
-          .post("http://localhost:8080/add-many")
+          .post("https://inventorybackend-4mye.onrender.com//add-many")
           .then((response) => {
             console.log(response.data);
             alert("Items added successfully");
