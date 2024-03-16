@@ -38,10 +38,10 @@
             <td>{{ item.item }}</td>
             <td class="numb"> 
                 {{
-                item.price.toLocaleString(undefined, {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2,
-                })
+                  item.price.toLocaleString(undefined, {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })
                 }}
             </td>
             <td class="numb">{{ item.quantity }}</td>
