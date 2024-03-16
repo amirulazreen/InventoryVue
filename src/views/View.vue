@@ -23,8 +23,8 @@
             <th class="idd">No</th>
             <th class="idd" @click="handleSort('ID')">ID</th>
             <th @click="handleSort('item')">Item</th>
-            <th class="numb" @click="handleSort('price')">Price (RM)</th>
             <th class="numb" @click="handleSort('quantity')">Quantity</th>
+            <th class="numb" @click="handleSort('price')">Price (RM)</th>
           </tr>
         </thead>
         <tbody>
@@ -36,6 +36,7 @@
             <td>{{ index + 1 }}</td>
             <td>{{ item.ID }}</td>
             <td>{{ item.item }}</td>
+            <td class="numb">{{ item.quantity.toLocaleString() }}</td>
             <td class="numb"> 
                 {{
                   item.price.toLocaleString(undefined, {
@@ -44,7 +45,6 @@
                   })
                 }}
             </td>
-            <td class="numb">{{ item.quantity.toLocaleString() }}</td>
           </tr>
         </tbody>
       </table>
