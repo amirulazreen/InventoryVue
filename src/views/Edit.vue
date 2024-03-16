@@ -79,7 +79,7 @@ export default {
   methods: {
     getItemData(itemId) {
       axios
-        .get(`http://localhost:8080/inventory/${itemId}`)
+        .get(`https://inventorybackend-4mye.onrender.com//inventory/${itemId}`)
         .then((response) => {
           this.model = { ...response.data };
           this.setOriginalData();
@@ -94,7 +94,7 @@ export default {
     saveItem() {
       axios
         .put(
-          `http://localhost:8080/update-inventory/${this.$route.params.id}`,
+          `https://inventorybackend-4mye.onrender.com//update-inventory/${this.$route.params.id}`,
           this.model
         )
         .then((response) => {
