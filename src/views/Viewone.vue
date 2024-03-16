@@ -11,7 +11,6 @@
           <h1>ID: {{ product && product.ID }}</h1>
           <br />
           <h2>{{ product && product.item }}</h2>
-          <p v-if="product">Quantity: {{ product.quantity.toLocaleString() }}</p>
           <div class="lister" v-if="product">
             <p>Quantity:</p>
             <p class="rev">{{ product.quantity.toLocaleString() }}</p>
