@@ -141,7 +141,6 @@ export default {
           .post("http://localhost:8080/add-many")
           .then((response) => {
             console.log(response.data);
-            alert("Items added successfully");
             this.getInventory();
           })
           .catch((error) => {
