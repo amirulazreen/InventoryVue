@@ -1,6 +1,6 @@
 <template>
   <div class="containerx">
-    <h2 class="header">Inventory</h2>
+    <h2 class="header">Inventory System</h2>
     <div class="search_column">
       <input type="text" placeholder="search..." v-model="search" />
       <select v-model="selectedOption">
