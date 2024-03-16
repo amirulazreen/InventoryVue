@@ -77,7 +77,6 @@ export default {
         .post("https://inventorybackend-4mye.onrender.com/add-inventory", this.model)
         .then((res) => {
           console.log(res);
-          alert("Item added");
           this.$router.push({ path: "/inventory" });
         })
         .catch((error) => {
