@@ -6,8 +6,8 @@
       <select v-model="selectedOption">
         <option value="ID">ID</option>
         <option value="Item">Item</option>
-        <option value="Price">Price</option>
         <option value="Quantity">Quantity</option>
+        <option value="Price">Price</option>
       </select>
       <RouterLink to="add-inventory" class="btn btn-primary">
         Add item
