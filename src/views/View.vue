@@ -44,7 +44,7 @@
                   })
                 }}
             </td>
-            <td class="numb">{{ item.quantity }}</td>
+            <td class="numb">{{ item.quantity.toLocaleString() }}</td>
           </tr>
         </tbody>
       </table>
