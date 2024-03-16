@@ -7,6 +7,7 @@
       <div v-if="loading">Loading...</div>
       <div v-else>
         <div class="card-body">
+          <img class="image" src="../assets/tools.jpg" />
           <h1>ID: {{ product.ID }}</h1>
           <br />
           <h2 class="marginn">{{ product.item }}</h2>
