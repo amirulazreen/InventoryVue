@@ -36,7 +36,13 @@
             <td>{{ index + 1 }}</td>
             <td>{{ item.ID }}</td>
             <td>{{ item.item }}</td>
-            <td class="numb">{{ item.price.toLocaleString() }}</td>
+            <td class="numb"> 
+                {{
+                item.price.toLocaleString(undefined, {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+                })
+              }}</td>
             <td class="numb">{{ item.quantity }}</td>
           </tr>
         </tbody>
