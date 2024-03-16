@@ -42,7 +42,8 @@
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
                 })
-              }}</td>
+                }}
+            </td>
             <td class="numb">{{ item.quantity }}</td>
           </tr>
         </tbody>
