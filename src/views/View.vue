@@ -124,7 +124,7 @@ export default {
     addManyItems() {
       if (confirm("Populate?")) {
         axios
-          .post("https://inventorybackend-4mye.onrender.com//add-many")
+          .post("https://inventorybackend-4mye.onrender.com/add-many")
           .then((response) => {
             console.log(response.data);
             alert("Items added successfully");
