@@ -12,8 +12,13 @@
       <RouterLink to="add-inventory" class="btn btn-primary">
         Add item
       </RouterLink>
-      <button type="button" @click="addManyItems()" class="btn btn-danger">
-        Populate
+      <button
+        type="button"
+        @click="addManyItems()"
+        class="btn btn-danger"
+        :disabled="loading"
+      >
+        {{ loading ? "Loading..." : "Populate" }}
       </button>
     </div>
     <div class="table-container">
@@ -83,6 +88,7 @@ export default {
       currentPage: 1,
       sortBy: "",
       sortDirection: "asc",
+      loading: false,
     };
   },
   mounted() {
@@ -130,8 +136,9 @@ export default {
     },
     addManyItems() {
       if (confirm("Populate?")) {
+        this.loading = true; 
         axios
-          .post("https://inventorybackend-4mye.onrender.com/add-many")
+          .post("http://localhost:8080/add-many")
           .then((response) => {
             console.log(response.data);
             alert("Items added successfully");
@@ -139,7 +146,10 @@ export default {
           })
           .catch((error) => {
             console.error("Error adding items:", error);
-            alert("Error: Item name must be unique");
+            alert(error);
+          })
+          .finally(() => {
+            this.loading = false; 
           });
       }
     },
