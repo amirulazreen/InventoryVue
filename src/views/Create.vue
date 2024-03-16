@@ -74,7 +74,7 @@ export default {
   methods: {
     saveItem() {
       axios
-        .post("https://inventorybackend-4mye.onrender.com//add-inventory", this.model)
+        .post("https://inventorybackend-4mye.onrender.com/add-inventory", this.model)
         .then((res) => {
           console.log(res);
           alert("Item added");
