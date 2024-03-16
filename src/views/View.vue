@@ -139,7 +139,7 @@ export default {
           })
           .catch((error) => {
             console.error("Error adding items:", error);
-            alert(error);
+            alert("Error: Item name must be unique");
           });
       }
     },
