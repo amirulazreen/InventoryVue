@@ -99,7 +99,6 @@ export default {
         )
         .then((response) => {
           console.log(response);
-          alert("Item updated successfully");
           this.$router.push({
             path: `/inventory/${this.$route.params.id}`,
           });
