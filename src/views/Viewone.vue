@@ -14,18 +14,18 @@
           <p>Price: RM 
               {{
                 product.price.toLocaleString(undefined, {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2,
-              })
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })
               }}
           </p>
           <p>Quantity: {{ product.quantity }}</p>
           <p>Total: RM 
               {{
                 (product.quantity * product.price).toLocaleString(undefined, {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2,
-              })
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })
               }}
           </p>
           <br />
