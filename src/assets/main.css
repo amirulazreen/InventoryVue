@@ -138,3 +138,13 @@ p {
   width: 400px;
   height: auto; 
 }
+
+.lister {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rev {
+  font-weight: bold;
+}
+
