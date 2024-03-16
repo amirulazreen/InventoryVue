@@ -36,7 +36,7 @@
             <td>{{ index + 1 }}</td>
             <td>{{ item.ID }}</td>
             <td>{{ item.item }}</td>
-            <td class="numb">{{ item.price }}</td>
+            <td class="numb">{{ item.price.toLocaleString() }}</td>
             <td class="numb">{{ item.quantity }}</td>
           </tr>
         </tbody>
