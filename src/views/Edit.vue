@@ -54,6 +54,7 @@
 
 <script>
 import axios from "axios";
+import { renderNotification } from "../utils/notification.js";
 
 export default {
   name: "InventoryEdit",
@@ -89,7 +90,7 @@ export default {
         });
     },
     setOriginalData() {
-      this.model.originalData = { ...this.model }; 
+      this.model.originalData = { ...this.model };
     },
     saveItem() {
       axios
@@ -112,7 +113,7 @@ export default {
           ) {
             errorMessage = error.response.data.error;
           }
-          alert(errorMessage);
+          renderNotification(errorMessage);
         });
     },
   },

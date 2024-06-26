@@ -25,6 +25,7 @@ import { RouterLink, RouterView } from "vue-router";
       </nav>
     </div>
   </header>
+  <div id="notification"></div>
   <RouterView />
 </template>
 

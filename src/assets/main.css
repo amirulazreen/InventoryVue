@@ -136,7 +136,7 @@ p {
   margin-left: 65%;
   border-radius: 5px;
   width: 350px;
-  height: auto; 
+  height: auto;
 }
 
 .lister {
@@ -148,3 +148,11 @@ p {
   font-weight: bold;
 }
 
+#notification {
+  border: 0;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 5px;
+}

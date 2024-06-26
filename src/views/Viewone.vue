@@ -92,14 +92,14 @@ export default {
         });
     },
     deleteInventory(itemid) {
-      if (confirm("Delete?")) {
-        axios
-          .delete(`https://inventorybackend-4mye.onrender.com/delete-inventory/${itemid}`)
-          .then(() => {
-            this.fetchProduct();
-            this.$router.push({ path: "/inventory" });
-          });
-      }
+      axios
+        .delete(
+          `https://inventorybackend-4mye.onrender.com/delete-inventory/${itemid}`
+        )
+        .then(() => {
+          this.fetchProduct();
+          this.$router.push({ path: "/inventory" });
+        });
     },
     goToEdit(itemid) {
       this.$router.push({ path: `/inventory/${itemid}` });

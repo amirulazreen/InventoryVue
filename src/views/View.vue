@@ -29,7 +29,9 @@
             <th class="idd" @click="handleSort('ID')">ID</th>
             <th @click="handleSort('item')">Item</th>
             <th class="numb" @click="handleSort('quantity')">Quantity</th>
-            <th class="numb" @click="handleSort('price')">Price/Product (RM)</th>
+            <th class="numb" @click="handleSort('price')">
+              Price/Product (RM)
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -42,13 +44,13 @@
             <td>{{ item.ID }}</td>
             <td>{{ item.item }}</td>
             <td class="numb">{{ item.quantity.toLocaleString() }}</td>
-            <td class="numb"> 
-                {{
-                  item.price.toLocaleString(undefined, {
-                    minimumFractionDigits: 2,
-                    maximumFractionDigits: 2,
-                  })
-                }}
+            <td class="numb">
+              {{
+                item.price.toLocaleString(undefined, {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })
+              }}
             </td>
           </tr>
         </tbody>
@@ -76,6 +78,7 @@
 
 <script>
 import axios from "axios";
+import { renderNotification } from "../utils/notification.js";
 
 export default {
   name: "inventory",
@@ -136,7 +139,7 @@ export default {
     },
     addManyItems() {
       if (confirm("Populate?")) {
-        this.loading = true; 
+        this.loading = true;
         axios
           .post("https://inventorybackend-4mye.onrender.com/add-many")
           .then((response) => {
@@ -145,10 +148,10 @@ export default {
           })
           .catch((error) => {
             console.error("Error adding items:", error);
-            alert(error);
+            renderNotification(error);
           })
           .finally(() => {
-            this.loading = false; 
+            this.loading = false;
           });
       }
     },

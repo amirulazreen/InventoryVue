@@ -50,10 +50,12 @@
       </div>
     </div>
   </div>
+  <div id="notification"></div>
 </template>
 
 <script>
 import axios from "axios";
+import { renderNotification } from "../utils/notification.js";
 
 export default {
   name: "ItemCreate",
@@ -74,7 +76,10 @@ export default {
   methods: {
     saveItem() {
       axios
-        .post("https://inventorybackend-4mye.onrender.com/add-inventory", this.model)
+        .post(
+          "https://inventorybackend-4mye.onrender.com/add-inventory",
+          this.model
+        )
         .then((res) => {
           console.log(res);
           this.$router.push({ path: "/inventory" });
@@ -88,7 +93,7 @@ export default {
           ) {
             errorMessage = error.response.data.error;
           }
-          alert(errorMessage);
+          renderNotification(errorMessage);
         });
     },
   },

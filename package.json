@@ -15,7 +15,8 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.5.7",
     "@vitejs/plugin-vue": "^5.0.4",
-    "vite": "^5.1.5"
+    "vite": "^5.3.1"
   }
 }
